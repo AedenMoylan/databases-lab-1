@@ -25,45 +25,45 @@ enum class SortBy { PRICE, COUNT };
 
 // QUESTION 1!
 
-//template<typename T>
-//T scalerProduct(std::vector<T> vec1, std::vector<T> vec2)
-//{
-//
-//
-//	return vec1[0] + vec2[0] + vec1[1] + vec2[1] + vec1[2] + vec2[2];
-//}
+template<typename T>
+T scalerProduct(std::vector<T> vec1, std::vector<T> vec2)
+{
+
+
+	return vec1[0] + vec2[0] + vec1[1] + vec2[1] + vec1[2] + vec2[2];
+}
 
 
 // QUESTION 2!
 
-//template<typename T1>
-//
-//std::pair<T1, T1> minMax(std::vector<T1> const& t_vec)
-//{
-//	int size = t_vec.size();
-//	T1 lowest = 99999;
-//	T1 highest = 0;
-//
-//	for (int i = 0; i < size; i++)
-//	{
-//		if (t_vec[i] < lowest)
-//		{
-//			lowest = t_vec[i];
-//		}
-//		if (t_vec[i] > highest)
-//		{
-//			highest = t_vec[i];
-//		}
-//	}
-//
-//	return std::pair<T1, T1> { lowest, highest };
-//}
+template<typename T1>
 
-//template<typename T2>
-//T2 sort()
-//{
-//
-//}
+std::pair<T1, T1> minMax(std::vector<T1> const& t_vec)
+{
+	int size = t_vec.size();
+	T1 lowest = 99999;
+	T1 highest = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+		if (t_vec[i] < lowest)
+		{
+			lowest = t_vec[i];
+		}
+		if (t_vec[i] > highest)
+		{
+			highest = t_vec[i];
+		}
+	}
+
+	return std::pair<T1, T1> { lowest, highest };
+}
+
+template<typename T2>
+T2 sort()
+{
+
+}
 
 bool isEven(int n)
 {
@@ -72,85 +72,59 @@ bool isEven(int n)
 
 
 /// <summary>
-/// QUESTION 4!
+/// QUESTION 4 and 5!
 /// </summary>
 /// <returns></returns>
 int divisible()
 {
 	srand(time(NULL));
 
-	std::vector<int> randNums{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	std::vector<int> randNums;
 
-	for (int i = 0; i < 20 ; i++)
+	for (int i = 0; i < 20; i++)
 	{
-		randNums.at(i) = (rand() % 9) + 1;
+		randNums.push_back((rand() % 9) + 1);
 	}
-	   /* auto is_even = [](auto e) {
-			return e % 2 == 0; 
-		};*/
+	int answer = std::count_if(randNums.begin(), randNums.end(), isEven);
 
-	return std::count_if(randNums.begin(), randNums.end(), isEven);
+	for (int i = 0; i < answer; i++)
+	{
+		std::vector<int>::iterator ansVec = std::find_if(randNums.begin(), randNums.end(), isEven);
+		randNums.erase(ansVec);
 
-}
+		
 
-/// <summary>
-/// QUESTION 5
-/// </summary>
-/// <returns></returns>
-int divisible2()
-{
-
-	srand(time(NULL));
-
-		std::vector<int> randNums;
-
-		for (int i = 0; i < 20; i++)
-		{
-			randNums.push_back((rand() % 9) + 1);
-		}
-		while (true)
-		{
-			std::vector<int>::iterator ansVec = std::find_if(randNums.begin(), randNums.end(), isEven);
-			std::cout << *ansVec << std::endl;
-			if (ansVec == randNums.end() - 1)
-			{
-				randNums.erase(ansVec);
-				break;
-			}
-			else
-				randNums.erase(ansVec);
-		}
+	}
+	for (int i = 0; i < randNums.size(); i++)
+	{
+		std::cout << randNums[i] << std::endl;
+	}
 	return 1;
 }
 
+	int main()
+	{
+		std::vector<int> v1 = { 1,3,5 };
+		std::vector<int> v2 = { 2,4,6 };
 
-int main()
-{
-	std::vector<int> v1 = { 1,3,5 };
-	std::vector<int> v2 = { 2,4,6 };
+		std::vector<int> bigVec = { 5,2,7,1,9,8 };
 
-	std::vector<int> bigVec = { 5,2,7,1,9,8 };
+		// Q1
+		/*int result = scalerProduct(v1, v2);*/
 
-	// Q1
-	/*int result = scalerProduct(v1, v2);*/
+		std::vector<Record> records = { Record(3, 10), Record(4, 20) };
 
-	std::vector<Record> records = { Record(3, 10), Record(4, 20) };
+		// Q2
+		//std::pair<double, double> result2 =  minMax(bigVec);
 
-	// Q2
-	//std::pair<double, double> result2 =  minMax(bigVec);
+		//std::cout << result2.first << std::endl;
+		//std::cout << result2.second << std::endl;
+		/*std::cout << result2 << std::endl;*/
 
-	//std::cout << result2.first << std::endl;
-	//std::cout << result2.second << std::endl;
-	/*std::cout << result2 << std::endl;*/
+		// Q4 + Q5
+		int answer = divisible();
 
-	// Q4
-	//int answer = divisible();
-
-	//std::cout << answer << std::endl;
-
-	int answer = divisible2();
-
-	std::cout << "baba" << std::endl;
-}
+		std::cout << "baba" << std::endl;
+	}
 
 

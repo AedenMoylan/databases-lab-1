@@ -1,4 +1,4 @@
 ﻿  Source.cpp
-C:\Users\C00249220\OneDrive - Institute of Technology Carlow\Desktop\R L 2\databases-lab-1\data structures lab 1\data structures lab 1\Source.cpp(80,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\C00249220\OneDrive - Institute of Technology Carlow\Desktop\R L 2\databases-lab-1\data structures lab 1\data structures lab 1\Source.cpp(103,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  data structures lab 1.vcxproj -> C:\Users\C00249220\OneDrive - Institute of Technology Carlow\Desktop\R L 2\databases-lab-1\data structures lab 1\Debug\data structures lab 1.exe
+C:\Users\gameuser\Desktop\databases lab 1\databases-lab-1\data structures lab 1\data structures lab 1\Source.cpp(80,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\gameuser\Desktop\databases lab 1\databases-lab-1\data structures lab 1\data structures lab 1\Source.cpp(98,20): warning C4018: '<': signed/unsigned mismatch
+  data structures lab 1.vcxproj -> C:\Users\gameuser\Desktop\databases lab 1\databases-lab-1\data structures lab 1\Debug\data structures lab 1.exe
