@@ -115,11 +115,11 @@ int divisible()
 		
 
 	}
-	for (int i = 0; i < randNums.size(); i++)
+	/*for (int i = 0; i < randNums.size(); i++)
 	{
 		std::cout << randNums[i] << std::endl;
-	}
-	return 1;
+	}*/
+	return randNums.size();
 }
 
 Record::Record(int t_price, int t_count) : price(t_price), count(t_count)
@@ -197,7 +197,7 @@ public:
 		//std::cout << result2.second << std::endl;
 		/*std::cout << result2 << std::endl;*/
 
-		std::vector<Record> records = { Record(3,20), Record(2,10), Record(7,50), Record(9,80) };
+		std::vector<Record> records = { Record(3,20), Record(2,10), Record(9,80), Record(7,50) };
 
 		SortBy sortPrice = SortBy::PRICE;
 		std::sort(records.begin(), records.end(), RecordSort(sortPrice));
@@ -206,7 +206,7 @@ public:
 		std::sort(records.begin(), records.end(), RecordSort(sortCount));
 
 		// Q4 + Q5
-		// int answer = divisible();
+		 int answer = divisible();
 
 		//	// Q6
 		for (int i = 0; i < 20; i++)
