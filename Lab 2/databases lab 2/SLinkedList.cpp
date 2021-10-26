@@ -62,6 +62,24 @@ template <typename T>
 void SLinkedList<T>::insertLast(T t_element)
 {
 	// To be completed...
+	std::unique_ptr<SListNode<T>> newNode = std::make_unique<SListNode<T>>(t_element, this);
+
+	if (nullptr == m_tail)
+	{
+		m_head = std::move(newNode);
+		//m_head.swap(newNode);
+		m_tail = m_head.get();
+	}
+	else
+	{
+		//newNode
+		m_tail->setNext(newNode);
+
+		m_tail = m_tail->next().get();
+
+
+	}
+	//count++;
 
 }
 
@@ -90,14 +108,42 @@ void SLinkedList<T>::insertAfter(Iterator& t_position, T t_element)
 template <typename T>
 void SLinkedList<T>::insertBefore(Iterator& t_position, T t_element)
 {
-	SListNode<T>* t_position = t_pos.get();
-	SListNode<T>* current = m_head.get();
-	for (; current->next().get() != t_position)
-	{
-		current = current->next.get();
-	}
-	// To be completed...
+	std::unique_ptr<SListNode<T>> newNode = std::make_unique<SListNode<T>>(t_element, this);
+	//std::unique_ptr<SListNode<T>> newNode2 = std::make_unique<SListNode<T>>(t_element, this);
 
+	SListNode<T>* t_pos = t_position.get();
+	SListNode<T>* prev = m_head.get();
+	for (; prev->next().get() != t_pos;)
+	{
+		prev = prev->next().get();
+
+	}
+	newNode->setNext(prev->next());
+	prev->setNext(newNode);
+
+}
+
+template <typename T>
+void SLinkedList<T>::moveLastToFront(Iterator& t_head, Iterator& t_tail)
+{
+
+	SListNode<T>* last = t_head.get();
+	SListNode<T>* first = t_head.get();
+	for (; last->next().get() != nullptr;)
+	{
+		last = last->next().get();
+
+	}
+	std::unique_ptr<SListNode<T>> newNode = std::make_unique<SListNode<T>>(last->element(), this);
+	std::unique_ptr<SListNode<T>> newNode2 = std::make_unique<SListNode<T>>(first->element(), this);
+	//std::unique_ptr<SListNode<T>> newNode2 = std::make_unique<SListNode<T>>(m_tail, this);
+
+	std::swap(m_head, newNode);
+	std::swap(m_tail, newNode2);
+
+	std::cout << "bababooey " << std::endl;
+
+	
 }
 
 

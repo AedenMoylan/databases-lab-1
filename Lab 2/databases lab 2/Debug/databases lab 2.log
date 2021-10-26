@@ -1,4 +1,58 @@
-﻿  ListTest.cpp
-  SLinkedList.cpp
-  Generating Code...
-  databases lab 2.vcxproj -> C:\Users\gameuser\Desktop\databases lab 2\Debug\databases lab 2.exe
+﻿  SLinkedList.cpp
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(142,7): error C2672: 'swap': no matching overloaded function found
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(128): message : while compiling class template member function 'void SLinkedList<int>::moveLastToFront(SListIterator<SLinkedList<int>> &,SListIterator<SLinkedList<int>> &)'
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(9): message : see reference to class template instantiation 'SLinkedList<int>' being compiled
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(142,1): error C2784: 'void std::swap(std::basic_string<_Elem,_Traits,_Alloc> &,std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'std::basic_string<_Elem,_Traits,_Alloc> &' from 'SListNode<T> *'
+          with
+          [
+              T=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30037\include\xstring(4679): message : see declaration of 'std::swap'
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(142,1): error C2784: 'void std::swap(std::unique_ptr<_Ty,_Dx> &,std::unique_ptr<_Ty,_Dx> &) noexcept': could not deduce template argument for 'std::unique_ptr<_Ty,_Dx> &' from 'SListNode<T> *'
+          with
+          [
+              T=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30037\include\memory(3447): message : see declaration of 'std::swap'
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(142,1): error C2784: 'void std::swap(std::weak_ptr<_Ty> &,std::weak_ptr<_Ty> &) noexcept': could not deduce template argument for 'std::weak_ptr<_Ty> &' from 'SListNode<T> *'
+          with
+          [
+              T=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30037\include\memory(3061): message : see declaration of 'std::swap'
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(142,1): error C2784: 'void std::swap(std::shared_ptr<_Ty> &,std::shared_ptr<_Ty> &) noexcept': could not deduce template argument for 'std::shared_ptr<_Ty> &' from 'SListNode<T> *'
+          with
+          [
+              T=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30037\include\memory(1918): message : see declaration of 'std::swap'
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(142,1): error C2784: 'void std::swap(std::pair<_Ty1,_Ty2> &,std::pair<_Ty1,_Ty2> &) noexcept(<expr>)': could not deduce template argument for 'std::pair<_Ty1,_Ty2> &' from 'SListNode<T> *'
+          with
+          [
+              T=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30037\include\utility(341): message : see declaration of 'std::swap'
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(142,1): error C2784: 'void std::swap(_Ty (&)[_Size],_Ty (&)[_Size]) noexcept(<expr>)': could not deduce template argument for '_Ty (&)[_Size]' from 'SListNode<T> *'
+          with
+          [
+              T=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30037\include\type_traits(2022): message : see declaration of 'std::swap'
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(142,1): error C2782: 'void std::swap(_Ty &,_Ty &) noexcept(<expr>)': template parameter '_Ty' is ambiguous
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30037\include\type_traits(2019): message : see declaration of 'std::swap'
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(142,1): message : could be 'std::unique_ptr<SListNode<T>,std::default_delete<SListNode<T>>>'
+          with
+          [
+              T=int
+          ]
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(142,1): message : or       'SListNode<T> *'
+          with
+          [
+              T=int
+          ]
+C:\Users\gameuser\Desktop\databases lab 2\databases-lab-1\Lab 2\databases lab 2\SLinkedList.cpp(142,1): error C2784: 'void std::swap(_Ty &,_Ty &) noexcept(<expr>)': could not deduce template argument for '_Ty &' from 'std::unique_ptr<SListNode<T>,std::default_delete<SListNode<T>>>'
+          with
+          [
+              T=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30037\include\type_traits(2019): message : see declaration of 'std::swap'
