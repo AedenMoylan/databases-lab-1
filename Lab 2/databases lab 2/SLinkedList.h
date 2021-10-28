@@ -25,7 +25,7 @@ public:
     void insertLast(T t_element) override;
     void insertAfter(Iterator& t_position, T t_element) override;
     void insertBefore(Iterator& t_position, T t_element) override;
-    void moveLastToFront(Iterator& t_head, Iterator& t_tail);
+    void moveLastToFront();
     Iterator remove(Iterator& t_position) override;
     int remove(T t_element) override;
 

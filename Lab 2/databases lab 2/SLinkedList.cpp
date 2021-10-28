@@ -124,24 +124,45 @@ void SLinkedList<T>::insertBefore(Iterator& t_position, T t_element)
 }
 
 template <typename T>
-void SLinkedList<T>::moveLastToFront(Iterator& t_head, Iterator& t_tail)
+void SLinkedList<T>::moveLastToFront()
 {
 
-	SListNode<T>* last = t_head.get();
-	SListNode<T>* first = t_head.get();
-	for (; last->next().get() != nullptr;)
-	{
-		last = last->next().get();
+	//SListNode<T>* last = m_head.get();
+	//SListNode<T>* first = m_head.get();
 
-	}
-	std::unique_ptr<SListNode<T>> newNode = std::make_unique<SListNode<T>>(last->element(), this);
-	std::unique_ptr<SListNode<T>> newNode2 = std::make_unique<SListNode<T>>(first->element(), this);
-	//std::unique_ptr<SListNode<T>> newNode2 = std::make_unique<SListNode<T>>(m_tail, this);
+	//for (; last->next().get() != nullptr;)
+	//{
+	//	last = last->next().get();
+	//}
 
-	std::swap(m_head, newNode);
-	std::swap(m_tail, newNode2);
+	//std::unique_ptr<SListNode<T>> newNode = std::make_unique<SListNode<T>>(last->element(), this);
+	//std::unique_ptr<SListNode<T>> newNode2 = std::make_unique<SListNode<T>>(first->element(), this);
 
-	std::cout << "bababooey " << std::endl;
+	//newNode->
+	//last->element();
+	//std::swap(last, newNode);
+	//std::swap(first, newNode2);
+
+	SListNode<T>* prev = m_head.get();
+	SListNode<T>* tail = m_tail;
+
+	for (; prev->next().get() != tail;
+		prev = prev->next().get());
+	
+
+	m_tail->setNext(m_head);
+
+	//m_head(prev->next);
+	m_head.swap(prev->next());
+	m_tail = prev;
+
+	//m_tail->setNext(prev);
+
+
+	    std::cout << m_head << std::endl;
+		std::cout << prev << std::endl;
+		std::cout << m_tail << std::endl;
+
 
 	
 }

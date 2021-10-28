@@ -15,8 +15,8 @@ int main()
 	SLinkedList<int>::Iterator it = list.begin();
 	SLinkedList<int>::Iterator itEnd = list.end();
 
-	list.insertBefore(itEnd, 2);
-	list.moveLastToFront(it,itEnd);
+	list.insertBefore(itEnd, 30);
+	list.moveLastToFront();
 	
 	// Simple equality test on two iterators
 	bool result = (it != itEnd);
