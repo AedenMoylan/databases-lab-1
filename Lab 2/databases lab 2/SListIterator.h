@@ -41,12 +41,12 @@ public:
 		return original;
 	}
 
-	bool operator ==(SListIterator& t_other) const
+	bool operator ==(SListIterator const & t_other) const
 	{
 		return m_current == t_other.m_current;
 	}
 
-	bool operator !=(SListIterator& t_other) const
+	bool operator !=(SListIterator const & t_other) const
 	{
 		return m_current != t_other.m_current;
 	}

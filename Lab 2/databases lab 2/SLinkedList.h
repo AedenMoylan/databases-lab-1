@@ -5,6 +5,7 @@
 #include "List.h"
 #include "SListNode.h"
 #include "SListIterator.h"
+#include <stack>
 
 // First the class interface
 template <typename T>
@@ -28,6 +29,8 @@ public:
     void moveLastToFront();
     Iterator remove(Iterator& t_position) override;
     int remove(T t_element) override;
+    int removePart2(T t_element);
+    void reverse();
 
     // Member functions specific to SLinkedList
     SListNode<T>* head() const;

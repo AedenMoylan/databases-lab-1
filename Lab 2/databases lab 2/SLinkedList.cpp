@@ -236,6 +236,59 @@ int SLinkedList<T>::remove(T t_element)
 	return matches;
 }
 
+template <typename T>
+int SLinkedList<T>::removePart2(T t_element)
+{
+	int count = 0;
+	SLinkedList<T>::Iterator it = this->begin();
+	while (it.get() != nullptr)
+	{
+		if ((*it) == t_element)
+		{
+			it = remove(it);
+			count++;
+		}
+	    else
+	    {
+	        it++;
+        }
+	}
+	return count;
+}
+
+template<typename T>
+void SLinkedList<T>::reverse()
+{
+	std::stack<T> Stack;
+
+	SListNode<T>* current = m_head.get();
+	SListNode<T>* tail = m_tail;
+	SListNode<T>* answer = m_head.get();
+
+	for (; current != nullptr; current = current->next().get())
+	{
+		Stack.push(current->element());
+
+		//std::cout << current->element() << std::endl;
+	}
+
+	current = m_head.get();
+
+	for (; current != nullptr; current = current->next().get())
+	{
+	     int top = Stack.top();
+	     Stack.pop();
+	     current->element() = top;
+		 std::cout << current->element() << std::endl;
+	}
+
+
+		
+
+
+}
+
+
 
 template <typename T>
 Iterator<T> SLinkedList<T>::last() const
