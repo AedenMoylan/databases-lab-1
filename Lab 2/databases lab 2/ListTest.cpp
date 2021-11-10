@@ -35,5 +35,32 @@ int main()
 	// Output the number of nodes in the list
 	std::cout << list.size() << std::endl;
 
+
+
+
+
+	//Q 5
+	std::list<int> randNumList;
+	std::list<int> destination;
+
+	for (int i = 0; i < 30; i++)
+	{
+		randNumList.push_back(rand() % 10 + 1);
+	}
+
+	int num1 = 3;
+	int num2 = 6;
+
+	// starting at the end of the list to find first instance of num1
+	auto revIterator = std::find(randNumList.rbegin(), randNumList.rend(), num1);
+
+	// converting to a forward iterator
+	auto forIterator = revIterator.base();
+
+    // forIterator is now being used to find num2
+	forIterator = std::find(forIterator, randNumList.end(), num2);
+	// numbers between num1 and num2 are being spliced into destination
+	destination.splice(destination.begin(), randNumList, revIterator.base(), forIterator);
+
 	system("PAUSE");
 }

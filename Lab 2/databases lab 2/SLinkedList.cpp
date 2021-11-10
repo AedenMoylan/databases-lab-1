@@ -77,7 +77,7 @@ void SLinkedList<T>::insertLast(T t_element)
 
 		m_tail = m_tail->next().get();
 
-
+        
 	}
 	//count++;
 
@@ -149,7 +149,6 @@ void SLinkedList<T>::moveLastToFront()
 	for (; prev->next().get() != tail;
 		prev = prev->next().get());
 	
-
 	m_tail->setNext(m_head);
 
 	//m_head(prev->next);
@@ -158,13 +157,9 @@ void SLinkedList<T>::moveLastToFront()
 
 	//m_tail->setNext(prev);
 
-
 	    std::cout << m_head << std::endl;
 		std::cout << prev << std::endl;
 		std::cout << m_tail << std::endl;
-
-
-	
 }
 
 
@@ -281,10 +276,25 @@ void SLinkedList<T>::reverse()
 	     current->element() = top;
 		 std::cout << current->element() << std::endl;
 	}
+}
+
+template<typename T>
+void SLinkedList<T>::makeNewHead(Iterator t_position)
+{
+	//SListNode<T>* current = m_head.get();
+	//SListNode<T>* position = m_head.get();
+
+	//std::unique_ptr<SListNode<T>> newNode = std::make_unique<SListNode<T>>(t_position, this);
 
 
-		
+	//for (; position != t_position; position = position->next().get())
+	//{
 
+	//}
+
+
+		//newNode->setNext(position);
+		/*std::swap(m_head, position->next());*/
 
 }
 

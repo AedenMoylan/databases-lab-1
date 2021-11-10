@@ -3,9 +3,11 @@
 #include <memory>	// for std::unique_ptr
 
 #include "List.h"
+#include <algorithm>
 #include "SListNode.h"
 #include "SListIterator.h"
 #include <stack>
+#include <list>
 
 // First the class interface
 template <typename T>
@@ -31,6 +33,7 @@ public:
     int remove(T t_element) override;
     int removePart2(T t_element);
     void reverse();
+    void makeNewHead(Iterator t_position);
 
     // Member functions specific to SLinkedList
     SListNode<T>* head() const;
