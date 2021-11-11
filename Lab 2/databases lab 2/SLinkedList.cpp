@@ -281,21 +281,22 @@ void SLinkedList<T>::reverse()
 template<typename T>
 void SLinkedList<T>::makeNewHead(Iterator t_position)
 {
-	//SListNode<T>* current = m_head.get();
-	//SListNode<T>* position = m_head.get();
+	SListNode<T>* pos = t_position.get();
+	SListNode<T>* current = m_head.get();
+	SListNode<T>* prev = m_head.get();
 
-	//std::unique_ptr<SListNode<T>> newNode = std::make_unique<SListNode<T>>(t_position, this);
-
-
-	//for (; position != t_position; position = position->next().get())
-	//{
-
-	//}
+	std::unique_ptr<SListNode<T>> newNode = std::move(pos->next());
 
 
-		//newNode->setNext(position);
-		/*std::swap(m_head, position->next());*/
+	for (; prev->next().get() != pos; prev = prev->next().get())
+	{
+	}
 
+	prev->setNext(m_head);
+
+	pos->setNext(current->next());
+
+	current->setNext(newNode);
 }
 
 

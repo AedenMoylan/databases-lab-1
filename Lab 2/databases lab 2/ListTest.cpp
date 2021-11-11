@@ -18,6 +18,7 @@ int main()
 	// Get an iterator to list beginning and "one past the end"
 	SLinkedList<int>::Iterator it = list.begin();
 	SLinkedList<int>::Iterator itEnd = list.end();
+	SLinkedList<int>::Iterator coolIt = list.head()->next().get();
 
 	//list.insertBefore(itEnd, 30);
 	//list.moveLastToFront();
@@ -37,7 +38,7 @@ int main()
 
 
 
-
+	list.makeNewHead(coolIt);
 
 	//Q 5
 	std::list<int> randNumList;
